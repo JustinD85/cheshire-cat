@@ -12,7 +12,3 @@
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
       (is (= (:status response) 404)))))
-
-(deftest test-fail
-  (testing "should fail"
-    (is (= 1 0))))
