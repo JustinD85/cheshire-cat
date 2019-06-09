@@ -1,4 +1,4 @@
-(ns chesire-cat.handler
+(ns cheshire-cat.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
