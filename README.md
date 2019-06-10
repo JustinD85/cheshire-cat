@@ -1,3 +1,3 @@
 # cheshire-cat
 
-Deps: [cljs](https://github.com/r0man/cljs-http)
+Deps: [cljs-http](https://github.com/r0man/cljs-http)
