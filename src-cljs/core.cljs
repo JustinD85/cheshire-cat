@@ -5,6 +5,9 @@
             [dommy.core :as dommy :refer-macros [sel sel1]])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
+(defn click-handler [e]
+  (.log js/console "You just clicked me!"))
+
 (defn ^:export init []
   (repl/connect "http://localhost:9000/repl")
   (go
@@ -12,5 +15,5 @@
       (-> (sel1 :#cat-name)
           (dommy/set-text! (str "Name: " cat-name)))
       (-> (sel1 :#status)
-          (dommy/set-text! (str "Status: " status))))))
-
+          (dommy/set-text! (str "Status: " status)))
+      (dommy/listen! (sel1 :#status) :click click-handler))
