@@ -7,7 +7,8 @@
 
 (defn click-handler [e]
   (.log js/console "You just clicked me!"))
-
+(defn submit-handler [e]
+  (js/alert (str "You just clicked a Button" )))
 (defn ^:export init []
   (repl/connect "http://localhost:9000/repl")
   (go
@@ -16,4 +17,6 @@
           (dommy/set-text! (str "Name: " cat-name)))
       (-> (sel1 :#status)
           (dommy/set-text! (str "Status: " status)))
-      (dommy/listen! (sel1 :#status) :click click-handler))
+      (dommy/listen! (sel1 :#status) :click click-handler)
+      (dommy/listen! (sel1 :#button) :click submit-handler))))
+

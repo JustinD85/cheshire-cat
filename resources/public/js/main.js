@@ -75442,6 +75442,9 @@ goog.require("dommy.core");
 cheshire_cat.core.click_handler = function cheshire_cat$core$click_handler(e) {
   return console.log("You just clicked me!");
 };
+cheshire_cat.core.submit_handler = function cheshire_cat$core$submit_handler(e) {
+  return alert("You just clicked a Button");
+};
 cheshire_cat.core.init = function cheshire_cat$core$init() {
   clojure.browser.repl.connect.call(null, "http://localhost:9000/repl");
   var c__4958__auto__ = cljs.core.async.chan.call(null, 1);
@@ -75449,34 +75452,37 @@ cheshire_cat.core.init = function cheshire_cat$core$init() {
     return function() {
       var f__4959__auto__ = function() {
         var switch__4907__auto__ = function(c__4958__auto__) {
-          return function(state_7115) {
-            var state_val_7116 = state_7115[1];
-            if (state_val_7116 === 1) {
-              var inst_7099 = cljs_http.client.get.call(null, "/cheshire-cat");
-              var state_7115__$1 = state_7115;
-              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_7115__$1, 2, inst_7099);
+          return function(state_7450) {
+            var state_val_7451 = state_7450[1];
+            if (state_val_7451 === 1) {
+              var inst_7432 = cljs_http.client.get.call(null, "/cheshire-cat");
+              var state_7450__$1 = state_7450;
+              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_7450__$1, 2, inst_7432);
             } else {
-              if (state_val_7116 === 2) {
-                var inst_7101 = state_7115[2];
-                var inst_7102 = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(inst_7101);
-                var inst_7103 = (new cljs.core.Keyword(null, "name", "name", 1843675177)).cljs$core$IFn$_invoke$arity$1(inst_7102);
-                var inst_7104 = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(inst_7101);
-                var inst_7105 = (new cljs.core.Keyword(null, "status", "status", -1997798413)).cljs$core$IFn$_invoke$arity$1(inst_7104);
-                var inst_7106 = document.getElementById("cat-name");
-                var inst_7107 = ["Name: ", cljs.core.str.cljs$core$IFn$_invoke$arity$1(inst_7103)].join("");
-                var inst_7108 = dommy.core.set_text_BANG_.call(null, inst_7106, inst_7107);
-                var inst_7109 = document.getElementById("status");
-                var inst_7110 = ["Status: ", cljs.core.str.cljs$core$IFn$_invoke$arity$1(inst_7105)].join("");
-                var inst_7111 = dommy.core.set_text_BANG_.call(null, inst_7109, inst_7110);
-                var inst_7112 = document.getElementById("status");
-                var inst_7113 = dommy.core.listen_BANG_.call(null, inst_7112, new cljs.core.Keyword(null, "click", "click", 1912301393), cheshire_cat.core.click_handler);
-                var state_7115__$1 = function() {
-                  var statearr_7117 = state_7115;
-                  statearr_7117[7] = inst_7108;
-                  statearr_7117[8] = inst_7111;
-                  return statearr_7117;
+              if (state_val_7451 === 2) {
+                var inst_7434 = state_7450[2];
+                var inst_7435 = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(inst_7434);
+                var inst_7436 = (new cljs.core.Keyword(null, "name", "name", 1843675177)).cljs$core$IFn$_invoke$arity$1(inst_7435);
+                var inst_7437 = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(inst_7434);
+                var inst_7438 = (new cljs.core.Keyword(null, "status", "status", -1997798413)).cljs$core$IFn$_invoke$arity$1(inst_7437);
+                var inst_7439 = document.getElementById("cat-name");
+                var inst_7440 = ["Name: ", cljs.core.str.cljs$core$IFn$_invoke$arity$1(inst_7436)].join("");
+                var inst_7441 = dommy.core.set_text_BANG_.call(null, inst_7439, inst_7440);
+                var inst_7442 = document.getElementById("status");
+                var inst_7443 = ["Status: ", cljs.core.str.cljs$core$IFn$_invoke$arity$1(inst_7438)].join("");
+                var inst_7444 = dommy.core.set_text_BANG_.call(null, inst_7442, inst_7443);
+                var inst_7445 = document.getElementById("status");
+                var inst_7446 = dommy.core.listen_BANG_.call(null, inst_7445, new cljs.core.Keyword(null, "click", "click", 1912301393), cheshire_cat.core.click_handler);
+                var inst_7447 = document.getElementById("button");
+                var inst_7448 = dommy.core.listen_BANG_.call(null, inst_7447, new cljs.core.Keyword(null, "click", "click", 1912301393), cheshire_cat.core.submit_handler);
+                var state_7450__$1 = function() {
+                  var statearr_7452 = state_7450;
+                  statearr_7452[7] = inst_7441;
+                  statearr_7452[8] = inst_7444;
+                  statearr_7452[9] = inst_7446;
+                  return statearr_7452;
                 }();
-                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_7115__$1, inst_7113);
+                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_7450__$1, inst_7448);
               } else {
                 return null;
               }
@@ -75487,17 +75493,17 @@ cheshire_cat.core.init = function cheshire_cat$core$init() {
           return function() {
             var cheshire_cat$core$init_$_state_machine__4908__auto__ = null;
             var cheshire_cat$core$init_$_state_machine__4908__auto____0 = function() {
-              var statearr_7118 = [null, null, null, null, null, null, null, null, null];
-              statearr_7118[0] = cheshire_cat$core$init_$_state_machine__4908__auto__;
-              statearr_7118[1] = 1;
-              return statearr_7118;
+              var statearr_7453 = [null, null, null, null, null, null, null, null, null, null];
+              statearr_7453[0] = cheshire_cat$core$init_$_state_machine__4908__auto__;
+              statearr_7453[1] = 1;
+              return statearr_7453;
             };
-            var cheshire_cat$core$init_$_state_machine__4908__auto____1 = function(state_7115) {
+            var cheshire_cat$core$init_$_state_machine__4908__auto____1 = function(state_7450) {
               while (true) {
                 var ret_value__4909__auto__ = function() {
                   try {
                     while (true) {
-                      var result__4910__auto__ = switch__4907__auto__.call(null, state_7115);
+                      var result__4910__auto__ = switch__4907__auto__.call(null, state_7450);
                       if (cljs.core.keyword_identical_QMARK_.call(null, result__4910__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                         continue;
                       } else {
@@ -75505,21 +75511,21 @@ cheshire_cat.core.init = function cheshire_cat$core$init() {
                       }
                       break;
                     }
-                  } catch (e7119) {
-                    if (e7119 instanceof Object) {
-                      var ex__4911__auto__ = e7119;
-                      var statearr_7120_7122 = state_7115;
-                      statearr_7120_7122[5] = ex__4911__auto__;
-                      cljs.core.async.impl.ioc_helpers.process_exception.call(null, state_7115);
+                  } catch (e7454) {
+                    if (e7454 instanceof Object) {
+                      var ex__4911__auto__ = e7454;
+                      var statearr_7455_7457 = state_7450;
+                      statearr_7455_7457[5] = ex__4911__auto__;
+                      cljs.core.async.impl.ioc_helpers.process_exception.call(null, state_7450);
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      throw e7119;
+                      throw e7454;
                     }
                   }
                 }();
                 if (cljs.core.keyword_identical_QMARK_.call(null, ret_value__4909__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
-                  var G__7123 = state_7115;
-                  state_7115 = G__7123;
+                  var G__7458 = state_7450;
+                  state_7450 = G__7458;
                   continue;
                 } else {
                   return ret_value__4909__auto__;
@@ -75527,12 +75533,12 @@ cheshire_cat.core.init = function cheshire_cat$core$init() {
                 break;
               }
             };
-            cheshire_cat$core$init_$_state_machine__4908__auto__ = function(state_7115) {
+            cheshire_cat$core$init_$_state_machine__4908__auto__ = function(state_7450) {
               switch(arguments.length) {
                 case 0:
                   return cheshire_cat$core$init_$_state_machine__4908__auto____0.call(this);
                 case 1:
-                  return cheshire_cat$core$init_$_state_machine__4908__auto____1.call(this, state_7115);
+                  return cheshire_cat$core$init_$_state_machine__4908__auto____1.call(this, state_7450);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -75543,9 +75549,9 @@ cheshire_cat.core.init = function cheshire_cat$core$init() {
         }(switch__4907__auto__, c__4958__auto__);
       }();
       var state__4960__auto__ = function() {
-        var statearr_7121 = f__4959__auto__.call(null);
-        statearr_7121[6] = c__4958__auto__;
-        return statearr_7121;
+        var statearr_7456 = f__4959__auto__.call(null);
+        statearr_7456[6] = c__4958__auto__;
+        return statearr_7456;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__4960__auto__);
     };
