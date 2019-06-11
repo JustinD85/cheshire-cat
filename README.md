@@ -23,6 +23,6 @@ ___
 
 # Run it
 
-- start server with lein ring server
+- start server with `lein ring server`
 - visit `localhost:3000/cat.html`
 - click around :fire:
