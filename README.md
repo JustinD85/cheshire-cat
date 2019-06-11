@@ -14,7 +14,7 @@ ___
 
 # Setup:
 
-## Leiningen and Clojure require Java. OpenJDK version 8 is recommended at this time.
+#### Leiningen and Clojure require Java. OpenJDK version 8 is recommended at this time.
 
 - Download the lein script (or on Windows lein.bat)
 - Place it on your $PATH where your shell can find it (eg. ~/bin)
