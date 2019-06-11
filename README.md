@@ -11,3 +11,18 @@ Deps:
 - [core.async](https://github.com/clojure/core.async)
 - [dommy](https://github.com/plumatic/dommy)
 ___
+
+# Setup:
+
+## Leiningen and Clojure require Java. OpenJDK version 8 is recommended at this time.
+
+- Download the lein script (or on Windows lein.bat)
+- Place it on your $PATH where your shell can find it (eg. ~/bin)
+- Set it to be executable (chmod a+x ~/bin/lein)
+- Run it (lein) and it will download the self-install package
+
+# Run it
+
+- start server with lein ring server
+- visit `localhost:3000/cat.html`
+- click around :fire:
